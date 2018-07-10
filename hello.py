@@ -13,3 +13,12 @@ def factorial(num):
 
 print(factorial.__doc__)
 print(factorial(5))
+
+# variables are deep copied by default
+a = b = c = "google.com"
+d = c
+d = "apple.com"
+print(a)
+print(b)
+print(c)
+print(d)
