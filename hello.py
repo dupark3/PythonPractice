@@ -1,4 +1,8 @@
 import constant
+import math
+import sys
+
+print(sys.path)
 
 # for loop in range
 for i in range(1, 11):
@@ -62,5 +66,37 @@ print(num1 + num2)
 
 num3 = float(input("enter a number to square root : "))
 print(num3 ** 0.5)
+
+a = float(input("enter the first side of a triangle : " ))
+b = float(input("enter the second side of a triangle : " ))
+c = float(input("enter the third side of a triangle : " ))
+s = (a + b + c)/2
+area = (s*(s-a)*(s-b)*(s-c)) ** 0.5
+print("%0.2f" %area)
+
+print("My first name is {} and last name is {}".format(name, last_name))
+print("First side is {0}, second side is {1}, and third side is {2}".format(a, b, c))
+
+x = 12.34567
+print("the value of x is %1.2f" %x)
+
+print(math.pi)
+
+
+my_list = [1, 5, 7, 2, 1]
+my_list.pop()
+my_list.append(19)
+print(my_list)
+
+my_tuple = (1, 2, 3)
+# my_tuple[0] = 3   tuples are immutable
+print(my_tuple)
+
+my_set = {1, 3, 2, 2, 5, 5}
+print(my_set) # {1, 3, 2, 5} sets have unique elements
+
+my_dict = {"1s2":"He", "1s1":"H"}
+print(my_dict["1s1"])
+print(my_dict)
 
 
