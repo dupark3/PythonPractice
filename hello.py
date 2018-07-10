@@ -1,3 +1,4 @@
+import constant
 # python testing
 
 for i in range(1, 11):
@@ -22,3 +23,7 @@ print(a)
 print(b)
 print(c)
 print(d)
+
+print(constant.PI)
+print(constant.GRAVITY)
+print(constant.triple(5))
