@@ -1,57 +1,67 @@
 def spiralprint(matrix):
-    height = len(matrix)
-    width = len(matrix[0])
-    rowsPrinted = [-1, height]
-    columnsPrinted = [-1, width]
-    i = j = 0
-    total = height * width
-    count = 0
+    """
+    spiralprint takes a 2D matrix as input and prints 
+    all elements in spiral form, going right, down, left, and up. 
+    """
+
+    # initialize rowsPrinted and columnsPrinted with the edges
+    rowsPrinted = [-1, len(matrix)]
+    columnsPrinted = [-1, len(matrix[0])]
+
+    # integer values used to index the matrix and move through the while loop
+    row = column = 0
+    totalElements = len(matrix) * len(matrix[0])
+    totalPrinted = 0
+
+    # four flags, right is True to start since we go to the right first.
     up = down = left = False
     right = True
-    while (count != total):
-        #print("i : ", i, " j : ", j)
-        count += 1
-        print(matrix[i][j], end=" ")
+    
+    # loop prints one element each time. checks for the correct directional flag.
+    while (totalPrinted < totalElements):
+        print(matrix[row][column], end=" ")
+        totalPrinted += 1
+
         if right:
-            if j + 1 in columnsPrinted:
+            if column + 1 in columnsPrinted:
                 right = False
                 down = True
-                rowsPrinted.append(i)
-                i += 1
+                rowsPrinted.append(row)
+                row += 1
                 continue
             else:
-                j += 1
+                column += 1
         if down:
-            if i + 1 in rowsPrinted:
+            if row + 1 in rowsPrinted:
                 down = False
                 left = True
-                columnsPrinted.append(j)
-                j -= 1
+                columnsPrinted.append(column)
+                column -= 1
                 continue
             else:
-                i += 1
+                row += 1
         if left:
-            if j - 1 in columnsPrinted:
+            if column - 1 in columnsPrinted:
                 left = False
                 up = True
-                rowsPrinted.append(i)
-                i -= 1
+                rowsPrinted.append(row)
+                row -= 1
                 continue
             else:
-                j -= 1
+                column -= 1
         if up:
-            if i - 1 in rowsPrinted:
+            if row - 1 in rowsPrinted:
                 up = False
                 right = True
-                columnsPrinted.append(j)
-                j += 1
+                columnsPrinted.append(column)
+                column += 1
                 continue
             else:
-                i -= 1
-
-
-    print()
+                row -= 1
+    print() # print a newline after while loop is done
 
 matrix = [ [1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15, 16]]
+matrix2 = [ [1, 2, 3, 4, 5, 6], [7, 8, 9, 10, 11, 12], [13, 14, 15, 16, 17, 18]]
 
 spiralprint(matrix)
+spiralprint(matrix2)
