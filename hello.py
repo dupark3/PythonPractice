@@ -40,7 +40,7 @@ print(list1[2:4])
 print(list1[:2])
 print(list1[1:])
 
-for i in range (len(list1)):
+for i in range(len(list1)):
     print(list1[i])
 
 # data objects are not deep copied!
@@ -99,4 +99,49 @@ my_dict = {"1s2":"He", "1s1":"H"}
 print(my_dict["1s1"])
 print(my_dict)
 
+# id is like the & operator in C++ to get the address of the pointer
+print(id(my_dict))
 
+# functions are objects, and therefore have addresses in memory
+function_variable = factorial
+print(function_variable(10))
+
+
+# namespace and scope. variables that are local do not change the global variable 
+# unless explicitly declared as global within the local scope
+def outer_function():
+    global a
+    def inner_function():
+        a = 15
+        print(a)
+    inner_function()
+    print(a)
+
+a = 100
+outer_function()
+
+if (a == 100):
+    print("a is 100")
+elif (a > 0):
+    print("a is positive at least")
+else:
+    print("a is not 100")
+
+for i in range(len(my_tuple)):
+    print(my_tuple[i])
+
+# not only does python have break, it also has continue, allowing you to 
+# skip the rest of the loop body. also, loops can have an else statement.
+for val in last_name:
+    if val == "r":
+        continue
+    print(val)
+else:
+    print("end of last name")
+
+def greet(*names):
+    for name in names:
+        print("Hello, ", name)
+
+greet("Monica", "John", "Jim")
+greet(3, 5.3, "James")
