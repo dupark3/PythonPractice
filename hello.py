@@ -145,3 +145,11 @@ def greet(*names):
 
 greet("Monica", "John", "Jim")
 greet(3, 5.3, "James")
+
+my_list = [1, 5, 8, 9, 10, 11, 12]
+print("my_list : ", my_list)
+new_list = list(filter(lambda x : (x % 2 == 0), my_list))
+print(new_list)
+
+new_list2 = list(map(lambda x: (x * 2), new_list))
+print(new_list2);
