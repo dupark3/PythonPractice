@@ -2,7 +2,7 @@
 # $ flask run OR python -m flask run    optional flag --host=0.0.0.0 to listen to other IPs
 # $ export FLASK_ENV=development        code changes refreshed
 
-from flask import Flask, redirect, url_for
+from flask import Flask, redirect, url_for, request, render_template
 app = Flask(__name__)
 
 @app.route('/')
@@ -10,15 +10,13 @@ def index():
     return 'index'
 
 # <variable_name> allows you to create dynamic URLs
-@app.route('/login')
+@app.route('/login', methods=['GET', 'POST'])
 def login():
-    return 'login'
-
-# with app.test_request_context():
-#     print(url_for('index'))
-#     print(url_for('login'))
-#     print(url_for('login', next='/'))
-#     print(url_for('profile', username='John%20Doe'))
+    if request.method == 'POST':
+        user=request.form['name']
+        return redirect(url_for('user', username=user))
+    else :
+        return render_template('login.html')
 
 @app.route('/admin')
 def admin():
