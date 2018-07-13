@@ -91,7 +91,7 @@ except AttributeError:
 
 
 
-def factorial(n):
+def factorial(n: 'int') -> "int":
     return _example.factorial(n)
 factorial = _example.factorial
 # This file is compatible with both classic and new-style classes.
