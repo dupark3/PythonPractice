@@ -1,9 +1,10 @@
 # $ export FLASK_APP=hello.py           lets the terminal know to use flask app
 # $ flask run OR python -m flask run    optional flag --host=0.0.0.0 to listen to other IPs
 # $ export FLASK_ENV=development        code changes refreshed
-
+import example
 from flask import Flask, redirect, url_for, request, render_template
 app = Flask(__name__)
+
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -45,3 +46,14 @@ def result():
         sum += val
     dict['avg'] = sum/len(dict)
     return render_template('result.html', jinjadict=dict)
+
+@app.route('/swig')
+def swig():
+    user = example.User("Du Park")
+    name = user.getName()
+    user.addNumber(5)
+    user.addNumber(3)
+    user.addNumber(4)
+    user.sortNumbers()
+    fact = example.factorial(user.getNumberAt(2))
+    return render_template('swig.html', jinjafactorial=fact, jinjaname=name)
