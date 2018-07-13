@@ -1,5 +1,8 @@
-# Executable #
+# SWIG files #
 ##############
+*.cxx
+*_wrap*
+example.py
 
 # Virtual environment directory #
 #################################
