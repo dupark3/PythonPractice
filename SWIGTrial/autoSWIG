@@ -1,0 +1,6 @@
+#!/bin/bash
+swig -c++ -python -py3 example.i
+g++ -O2 -fPIC -c example.cpp
+g++ -O2 -fPIC -c example_wrap.cxx -I/usr/include/python3.5
+g++ -shared example.o example_wrap.o -o _example.so
+echo "C++ to Python module using swig: done compiling and linking"
