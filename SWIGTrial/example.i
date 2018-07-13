@@ -1,8 +1,8 @@
 %module example
+%include "std_string.i"
 %{
-extern int factorial(int n);
-
+#include "example.h"
 
 %}
 
-extern int factorial(int n);
+%include "example.h"
