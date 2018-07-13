@@ -10,6 +10,7 @@ int factorial(int);
 class User{
 public:
     User() { }
+    User(const std::string& n) : name(n) { }
 
     void setName(std::string n) { name = n; }
     std::string getName() { return name; }
@@ -22,6 +23,8 @@ public:
             return 0;
         }
     }
+
+    void sortNumbers();
 
 private:
     std::string name;
