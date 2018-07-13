@@ -56,4 +56,5 @@ def swig():
     user.addNumber(4)
     user.sortNumbers()
     fact = example.factorial(user.getNumberAt(2))
-    return render_template('swig.html', jinjafactorial=fact, jinjaname=name)
+    list = user.getNumbers()
+    return render_template('swig.html', jinjafactorial=fact, jinjaname=name, jinjalist=list)

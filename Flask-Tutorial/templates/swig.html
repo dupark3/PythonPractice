@@ -4,7 +4,13 @@
     <h1> Swig test site </h1>
     <p> {{ jinjaname }} </p>
     <p> {{ jinjafactorial }} </p>
-
+    <table border=1>
+        {% for val in jinjalist %}
+        <tr> 
+            <th> {{ val }} </th>
+        </tr>
+        {% endfor %}
+    </table>
 
 </body>
 

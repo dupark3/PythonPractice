@@ -15,6 +15,7 @@ public:
     void setName(std::string n) { name = n; }
     std::string getName() { return name; }
 
+    std::vector<int> getNumbers() { return numbers; }
     void addNumber(int n) { numbers.push_back(n); }
     int getNumberAt(int n) { 
         if (n < numbers.size()){
