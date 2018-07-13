@@ -1,5 +1,3 @@
-#include <stdio.h>
-
 #include "example.h"
 
 int factorial(int n){
@@ -7,10 +5,4 @@ int factorial(int n){
         return 1;
     else
         return n * factorial(n - 1);
-}
-
-int main(){
-    int result = factorial(5);
-    printf("%d\n", result);
-    return 0;
 }
