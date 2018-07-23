@@ -1,3 +1,5 @@
+#! /usr/bin/python3.5
+
 def addToInventory(inventory, loot):
     for item in loot:
         inventory.setdefault(item, 0)
