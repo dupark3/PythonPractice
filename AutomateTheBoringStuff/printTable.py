@@ -2,7 +2,8 @@
 
 def printTable(table):
     """ prints table with every item aligned to the right """
-    maxLengths = []
+
+    maxLengths = [0] * len(table)
     for column in range(len(table[0])):
         maxLen = 0
         for row in range(len(table)):
