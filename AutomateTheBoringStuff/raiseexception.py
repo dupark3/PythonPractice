@@ -23,4 +23,4 @@ for char, width, height in [ ['*', 3, 5], ['O', 10, 5], ['1', 5, 2], ['**', 4, 4
     try:
         drawBox(char, width, height)
     except Exception as err:
-        print(err)
+        print('Exception raised: ' + str(err))
