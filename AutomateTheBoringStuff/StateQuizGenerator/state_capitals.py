@@ -1,4 +1,5 @@
-capitals = {  'Alabama':' Montgomery' ,
+capitals = {  
+ 'Alabama':'Montgomery' ,
  'Montana':'Helena' ,
  'Alaska':'Juneau' ,
  'Nebraska':'Lincoln' ,
